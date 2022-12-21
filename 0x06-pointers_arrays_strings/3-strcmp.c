@@ -1,25 +1,23 @@
 #include "main.h"
+
 /**
-*  _strncpy - C function that copies a string, including the
-*  terminating null byte, using at most an inputted number of bytes.
-*  If the length of the source string is less than the maximum byte number,
-*  the remainder of the destination string is filled with null bytes.
-*  Works identically to the standard library function `strncpy`.
-*@dest: buffer storing the string copy
-*@src:the source string
-*@n:max nummber of byte copied
-*Return: returns
-*/
-
-char *_strncpy(char *dest, char *src, int n)
+ * _strcmp - Compares pointers to two strings.
+ * @s1: A pointer to the first string to be compared.
+ * @s2: A pointer to the second string to be compared.
+ *
+ * Return: If str1 < str2, the negative difference of
+ * the first unmatched characters.
+ *         If s1 == s2, 0.
+ *         If s1 > s2, the positive difference of
+ *         the first unmatched characters.
+ */
+int _strcmp(char *s1, char *s2)
 {
-	int i;
+	while ((*s1 && *s2) && (*s1 == *s2))
+	{
+		s1++;
+		s2++;
+	}
 
-	for (i = 0; i < n && src[i] != '\0'; i++)
-		dest[i] = src[i];
-
-	for ( ; i < n; i++)
-		dest[i] = '\0';
-
-	return (dest);
+	return (*s1 - *s2);
 }
