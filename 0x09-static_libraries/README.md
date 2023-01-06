@@ -1,1 +1,1 @@
-Statics Libaray 
+Statics Libaray
